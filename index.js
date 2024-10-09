@@ -8,7 +8,7 @@ const getSalesByAgent = require("./controller/salesSummaryController");
 
 const app=express();
 app.use(express.json())
-const url="mongodb+srv://lavanyakaramkanti0904:Z2zC8x4pqXmCYQzf@cluster1.ivelf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1"
+const url="mongodb+srv://lavanyakaramkanti0904:9QPxMlDPO1BbFu1L@cluster1.iv3qj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1"
 mongoose.connect(url, {dbName:"salesDB"})
 
 .then(()=>{
