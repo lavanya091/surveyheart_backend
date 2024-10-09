@@ -1,0 +1,32 @@
+const mongoose = require("mongoose");
+const saleSchema = new mongoose.Schema({
+    agenteMail:{
+        type:String,
+        ref:'Agent',
+        required:true,
+    },
+    customereMail:{
+        type:String,
+        ref:'Lead',
+        required:true
+    },
+    products_sold:[{
+        product:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Product",
+            required:true
+        },
+        quantity:{
+            type:Number,
+            required:true,
+            default:1
+        }
+    }
+],
+    saledate:{
+        type:Date,
+        default:Date.now
+    }
+});
+saleSchema.index({agenteMail:1,customereMail:1},{unique:true})
+module.exports=mongoose.model('Sale',saleSchema);

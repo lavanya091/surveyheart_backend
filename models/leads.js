@@ -1,0 +1,41 @@
+const mongoose=require("mongoose");
+const leadSchema=new mongoose.Schema({
+    name:{
+        type:String,
+        required:true,
+    },
+	email:{
+        type:String,
+        required:true,
+        unique:true,
+    },
+	phonenumber:{
+        type:Number,
+        required:true,
+    },
+	age:{
+        type:Number,
+    },
+	city:{
+        type:String,
+        required:true,
+    },
+	state:{
+        type:String,
+        required:true,
+    },
+	country:{
+        type:String,
+        required:true,
+    },
+	pincode:{
+        type:Number,
+        required:true,
+    },
+	agent_email:{
+        type:String,
+        ref:"Agents",
+        required:true,
+    }
+})
+module.exports=mongoose.model("Lead",leadSchema)
