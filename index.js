@@ -8,7 +8,8 @@ const getSalesByAgent = require("./controller/salesSummaryController");
 
 const app=express();
 app.use(express.json())
-mongoose.connect("mongodb://localhost:27017/AgentProdLead")
+const url="mongodb+srv://lavanyakaramkanti0904:Z2zC8x4pqXmCYQzf@cluster1.ivelf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1"
+mongoose.connect(url, {dbName:"salesDB"})
 
 .then(()=>{
     console.log("Database is connected")
